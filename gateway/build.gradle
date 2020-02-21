@@ -165,6 +165,15 @@ repositories {
             snapshotsOnly()
         }
     }
+    maven {
+        url "https://repo.spring.io/libs-snapshot-local/"
+        mavenContent {
+            snapshotsOnly()
+        }
+    }
+    maven {
+        url "https://repo.spring.io/libs-milestone-local/"
+    }
     //jhipster-needle-gradle-repositories - JHipster will add additional repositories
 }
 
@@ -207,16 +216,16 @@ dependencies {
     implementation "io.netty:netty-tcnative-boringssl-static"
     implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
     implementation "org.zalando:problem-spring-webflux"
-    implementation "org.springframework.cloud:spring-cloud-starter-gateway"
+    implementation "org.springframework.cloud:spring-cloud-starter-gateway:2.2.2.BUILD-SNAPSHOT"
     implementation "com.github.vladimir-bukhtoyarov:bucket4j-core"
     implementation "com.github.vladimir-bukhtoyarov:bucket4j-jcache"
-    implementation "org.springframework.cloud:spring-cloud-starter"
-    implementation "org.springframework.cloud:spring-cloud-starter-netflix-ribbon"
-    implementation "org.springframework.cloud:spring-cloud-starter-netflix-hystrix"
+    implementation "org.springframework.cloud:spring-cloud-starter:2.2.2.BUILD-SNAPSHOT"
+    implementation "org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.2.2.BUILD-SNAPSHOT"
+    implementation "org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.2.2.BUILD-SNAPSHOT"
     implementation "org.springframework.retry:spring-retry"
-    implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
-    implementation "org.springframework.cloud:spring-cloud-starter-config"
-    implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
+    implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:2.2.2.BUILD-SNAPSHOT"
+    implementation "org.springframework.cloud:spring-cloud-starter-config:2.2.2.BUILD-SNAPSHOT"
+    implementation "org.springframework.cloud:spring-cloud-starter-openfeign:2.2.2.BUILD-SNAPSHOT"
     implementation "org.springframework.boot:spring-boot-starter-cloud-connectors"
     implementation "org.springframework.security:spring-security-config"
     implementation "org.springframework.security:spring-security-data"

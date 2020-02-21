@@ -99,7 +99,7 @@ spring:
   cloud:
     gateway:
       default-filters:
-        - TokenRelay
+        - JWTRelay
       discovery:
         locator:
           enabled: true
