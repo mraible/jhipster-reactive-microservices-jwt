@@ -42,7 +42,7 @@ public class UserJWTControllerIT {
         login.setPassword("test");
         webTestClient.post().uri("/api/authenticate")
             .contentType(TestUtil.APPLICATION_JSON)
-            .syncBody(TestUtil.convertObjectToJsonBytes(login))
+            .bodyValue(TestUtil.convertObjectToJsonBytes(login))
             .exchange()
             .expectStatus().isOk()
             .expectHeader().valueMatches("Authorization", "Bearer .+")
@@ -66,7 +66,7 @@ public class UserJWTControllerIT {
         login.setRememberMe(true);
         webTestClient.post().uri("/api/authenticate")
             .contentType(TestUtil.APPLICATION_JSON)
-            .syncBody(TestUtil.convertObjectToJsonBytes(login))
+            .bodyValue(TestUtil.convertObjectToJsonBytes(login))
             .exchange()
             .expectStatus().isOk()
             .expectHeader().valueMatches("Authorization", "Bearer .+")
@@ -81,7 +81,7 @@ public class UserJWTControllerIT {
         login.setPassword("wrong password");
         webTestClient.post().uri("/api/authenticate")
             .contentType(TestUtil.APPLICATION_JSON)
-            .syncBody(TestUtil.convertObjectToJsonBytes(login))
+            .bodyValue(TestUtil.convertObjectToJsonBytes(login))
             .exchange()
             .expectStatus().isUnauthorized()
             .expectHeader().doesNotExist("Authorization")
