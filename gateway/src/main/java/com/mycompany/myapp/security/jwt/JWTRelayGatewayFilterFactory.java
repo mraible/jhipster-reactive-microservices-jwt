@@ -28,7 +28,7 @@ public class JWTRelayGatewayFilterFactory extends AbstractGatewayFilterFactory<O
 
                 return chain.filter(exchange.mutate().request(request).build());
             }
-            return null;
+            return chain.filter(exchange);
         };
     }
 
@@ -37,6 +37,6 @@ public class JWTRelayGatewayFilterFactory extends AbstractGatewayFilterFactory<O
         if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
             return bearerToken.substring(7);
         }
-        return null;
+        throw new IllegalArgumentException("Invalid token in Authorization header");
     }
 }
